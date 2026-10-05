@@ -404,6 +404,7 @@
 .drive-time { font-size: 14px; color: var(--muted); text-align: right; }
 .home-map {
   position: relative;
+  isolation: isolate;
   height: clamp(400px, 42vw, 580px);
   border-radius: 28px;
   overflow: hidden;

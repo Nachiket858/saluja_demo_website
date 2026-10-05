@@ -54,9 +54,10 @@
 
 .place-km { color: var(--faint); }
 
-/* Map: on phones the detail card sits under the map; from 760px it floats on it */
+/* Map with the detail card in a strip underneath it */
 .map-frame {
   position: relative;
+  isolation: isolate; /* keep Leaflet's z-indexes under the sticky nav */
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -65,7 +66,7 @@
   background: #fff;
   box-shadow: 0 30px 60px rgba(18, 23, 28, 0.08);
 }
-.map-frame .campus-map-wrap { height: 400px; flex: none; }
+.map-frame .campus-map-wrap { height: 400px; flex: none; border-radius: 0; }
 
 .map-legend {
   position: absolute;
@@ -98,12 +99,8 @@
   flex-direction: column;
   gap: 8px;
   padding: 20px 22px 18px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 22px;
-  box-shadow: 0 16px 40px rgba(18, 23, 28, 0.14);
-  border: 1px solid rgba(18, 23, 28, 0.08);
+  background: #fff;
+  border-top: 1px solid var(--line);
   animation: map-card-in 400ms var(--ease) both;
 }
 @keyframes map-card-in {
@@ -158,14 +155,31 @@
 .map-card-nav button:hover { background: var(--ink); color: #fff; }
 
 @media (min-width: 760px) {
-  .map-frame { height: min(80vh, 760px); min-height: 540px; background: #eef1f4; }
-  .map-frame .campus-map-wrap { height: 100%; }
+  /* Map grows to fill whatever height the list column gives the frame */
+  .map-frame .campus-map-wrap { flex: 1 1 auto; height: auto; min-height: min(64vh, 560px); }
+  .map-frame .campus-map { position: absolute; inset: 0; height: auto; }
   .map-card {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    width: min(340px, calc(100% - 100px));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas: 'top stats nav' 'name stats nav' 'note stats nav';
+    align-items: center;
+    column-gap: 32px;
+    row-gap: 6px;
+    padding: 22px 28px;
   }
+  .map-card-top { grid-area: top; justify-content: flex-start; gap: 16px; }
+  .map-card-name { grid-area: name; }
+  .map-card-note { grid-area: note; }
+  .map-card-stats {
+    grid-area: stats;
+    margin: 0;
+    padding: 0 0 0 32px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    column-gap: 28px;
+  }
+  .map-card-stats > div + div { padding-left: 28px; }
+  .map-card-nav { grid-area: nav; margin: 0; gap: 12px; }
   .map-frame .map-hint { left: auto; right: 64px; bottom: 30px; transform: none; }
 }
 @media (max-width: 759px) {
