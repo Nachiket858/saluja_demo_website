@@ -59,6 +59,7 @@ export default function Location() {
   return (
     <>
       <PageHero
+        variant="orbit"
         id="l-h"
         image={IMG('1590496793929-36417d3117de', 2400)}
         alt="Aerial view of trucks in a logistics yard"

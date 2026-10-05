@@ -41,6 +41,7 @@ export default function Facility() {
   return (
     <>
       <PageHero
+        variant="stack"
         id="f-h"
         tall
         image={IMG('1553413077-190dd305871c', 2400)}

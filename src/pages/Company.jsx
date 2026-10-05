@@ -61,6 +61,7 @@ export default function Company() {
   return (
     <>
       <PageHero
+        variant="split"
         id="c-h"
         image={IMG('1541888946425-d81bb19240f5', 2400)}
         alt="Aerial view of an industrial site with a team on the ground"
