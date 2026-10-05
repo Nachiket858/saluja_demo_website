@@ -1,0 +1,112 @@
+/* Story */
+.story { align-items: start; }
+.story-side { position: relative; height: 100%; }
+.story-sticky { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 22px; }
+.story-year {
+  margin: 0;
+  font: italic 400 clamp(96px, 12vw, 200px)/0.85 var(--serif);
+  font-variant-numeric: tabular-nums;
+}
+.story-progress {
+  height: 4px;
+  max-width: 320px;
+  border-radius: 99px;
+  background: rgba(18, 23, 28, 0.08);
+  overflow: hidden;
+}
+.story-progress > div { height: 100%; border-radius: 99px; background: var(--orange); transition: width 500ms var(--ease); }
+
+.timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.timeline-item {
+  padding: clamp(24px, 3vw, 36px);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: opacity 400ms, background 400ms, box-shadow 400ms;
+}
+.timeline-item.is-active { background: #fff; box-shadow: 0 20px 50px rgba(18, 23, 28, 0.07); }
+.timeline-item.is-ahead { opacity: 0.45; }
+.timeline-year { font: 500 13px var(--sans); color: var(--orange); }
+.timeline-title { font: 400 clamp(22px, 2vw, 28px)/1.2 var(--sans); letter-spacing: -0.02em; }
+.timeline-body { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 540px; }
+.timeline-note { margin: 12px 0 0; padding-inline: clamp(24px, 3vw, 36px); }
+
+@media (max-width: 959px) {
+  /* Single column: the year sits above the list instead of sticking */
+  .story-sticky { position: static; }
+  .story-year { font-size: clamp(80px, 22vw, 140px); }
+}
+
+/* Leadership */
+.lead-media { position: relative; height: clamp(380px, 38vw, 540px); }
+.lead-media img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 82%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 28px;
+  background: #2a3540;
+}
+.lead-monogram {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: clamp(116px, 11vw, 150px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 8px solid var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.lead-monogram span { font: italic 400 clamp(32px, 3vw, 42px)/1 var(--serif); }
+.lead-monogram .lead-monogram-kicker {
+  font: 500 11px var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.75);
+}
+.lead-person {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 242, 238, 0.14);
+}
+.lead-person span:first-child { font: 400 22px var(--sans); letter-spacing: -0.02em; }
+.lead-person span:last-child { font-size: 14px; color: rgba(244, 242, 238, 0.6); }
+
+/* Promises */
+.promises { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.promises li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 10px 20px;
+  align-items: baseline;
+  padding: clamp(24px, 3vw, 36px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.promise-n { font: italic 400 28px var(--serif); color: var(--orange); }
+.promise-t { font: 400 clamp(24px, 2.4vw, 36px)/1.15 var(--sans); letter-spacing: -0.03em; transition: color 300ms; }
+.promise-b { grid-column: 2; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.promises li.is-active .promise-t { color: var(--orange); }
+@media (min-width: 860px) {
+  .promises li { grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); gap: 20px 40px; }
+  .promise-b { grid-column: auto; }
+}
+
+/* Sustainability */
+.sus-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
+.sus-list li:not(.note) { display: flex; flex-direction: column; gap: 10px; }
+.sus-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font: 400 18px var(--sans); }
+.sus-head span:last-child { font-size: 13px; white-space: nowrap; }
+
+.company-gap { height: var(--page-end); }

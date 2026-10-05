@@ -1,0 +1,227 @@
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #f4f2ee;
+  --ink: #12171c;
+  --muted: #5b636b;
+  --faint: #8a9098;
+  --orange: #e0662f;
+  --orange-hot: #f26b2c;
+  --orange-dark: #c9552a;
+  --peach: #f5a47e;
+  --blue: #38688e;
+  --navy: #0f1b26;
+  --sand: #eae6df;
+  --stone: #e3ded6;
+  --line: rgba(18, 23, 28, 0.12);
+  --line-dark: rgba(244, 242, 238, 0.12);
+
+  --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* One spacing scale for every page */
+  --gutter: clamp(20px, 4vw, 56px);   /* text-column side padding */
+  --edge: clamp(12px, 2vw, 28px);     /* inset of rounded full-bleed cards */
+  --section-y: clamp(80px, 9vw, 140px);
+  --band-y: clamp(56px, 7vw, 110px);
+  --head-gap: clamp(36px, 4vw, 56px); /* heading block → content */
+  --page-end: clamp(64px, 6vw, 96px); /* last section → footer */
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; color: inherit; }
+::selection { background: var(--orange); color: #fff; }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 200;
+  background: var(--ink);
+  color: #f4f2ee;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+.skip-link:focus { left: 8px; }
+
+:where(.reset-btn) {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: min(100% - 2 * var(--gutter), 1480px);
+  margin-inline: auto;
+}
+.section { padding-block: var(--section-y); }
+.section--flush-top { padding-top: 0; }
+
+.band {
+  margin-inline: var(--edge);
+  border-radius: 32px;
+  background: var(--sand);
+}
+.band--dark { background: var(--navy); color: #f4f2ee; }
+.band > .container { padding-block: var(--band-y); }
+
+.split {
+  display: grid;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.split--wide-right,
+.split--wide-left { gap: clamp(28px, 4vw, 64px); }
+@media (min-width: 960px) {
+  .split { grid-template-columns: 1fr 1fr; }
+  .split--wide-right { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+  .split--wide-left { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+}
+
+.stack { display: flex; flex-direction: column; gap: 24px; }
+.stack--sm { gap: 18px; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px 24px;
+  flex-wrap: wrap;
+  margin-bottom: var(--head-gap);
+}
+
+.block-head { margin-bottom: var(--head-gap); max-width: 640px; }
+
+.page-end { padding: 0 var(--edge) var(--page-end); }
+
+/* ---------- Type ---------- */
+.eyebrow {
+  font: 500 12px/1.2 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.h2 {
+  margin: 0;
+  font: 400 clamp(32px, 3.4vw, 52px)/1.08 var(--sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.lead {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  text-wrap: pretty;
+  max-width: 520px;
+}
+.band--dark .lead { color: rgba(244, 242, 238, 0.72); }
+.unit {
+  font: italic 400 0.6em var(--serif);
+  color: var(--orange);
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+.note { font-size: 12px; color: var(--faint); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font: 500 15px var(--sans);
+  white-space: nowrap;
+  align-self: flex-start;
+  transition: background 250ms, color 250ms, border-color 250ms;
+}
+.btn--outline { border: 1px solid rgba(18, 23, 28, 0.2); }
+.btn--outline:hover { border-color: var(--ink); background: #fff; }
+.btn--dark { height: 52px; padding: 0 24px; background: var(--ink); color: #fff; }
+.btn--dark:hover { background: var(--orange); }
+
+.icon-btn {
+  appearance: none;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(18, 23, 28, 0.2);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 250ms, color 250ms;
+}
+.icon-btn:hover { background: var(--ink); color: #fff; }
+.icon-btn--dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+.icon-btn--dark:hover { background: var(--orange); border-color: var(--orange); }
+
+/* ---------- Glass chip on photos ---------- */
+.glass-chip {
+  align-self: flex-start;
+  font: 500 13px var(--sans);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* ---------- Bars (drive times, sustainability) ---------- */
+.bar {
+  display: block;
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(18, 23, 28, 0.08);
+  overflow: hidden;
+}
+.bar > span { display: block; height: 100%; border-radius: 99px; transition: background 250ms, width 500ms var(--ease); }
+
+/* ---------- Divider grid (stat rows) ----------
+   Items get a left border; the wrapper hides the first one in each row,
+   so dividers stay correct at every column count. */
+.divided { overflow: hidden; }
+.divided > * { display: grid; margin-left: -1px; }
+.divided > * > * { border-left: 1px solid var(--line); }

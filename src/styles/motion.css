@@ -1,0 +1,106 @@
+/* ================= Scroll reveal =================
+   data-rv is set by useScrollReveal: "0" = waiting, "1" = in view. */
+[data-rv] {
+  transition:
+    opacity 900ms var(--ease) var(--rv-d, 0ms),
+    transform 900ms var(--ease) var(--rv-d, 0ms),
+    filter 900ms var(--ease) var(--rv-d, 0ms);
+}
+[data-rv='0'] { opacity: 0; transform: translateY(36px); }
+[data-rv='1'] { opacity: 1; transform: none; }
+
+/* Large media scale up from slightly smaller with a soft blur */
+.spec-media[data-rv='0'],
+.walk-media[data-rv='0'],
+.home-map[data-rv='0'],
+.map-frame[data-rv='0'],
+.site-plan[data-rv='0'],
+.home-cta[data-rv='0'],
+.next-card[data-rv='0'],
+.lead-media[data-rv='0'],
+.intro-collage[data-rv='0'] { transform: translateY(48px) scale(0.96); filter: blur(6px); }
+[data-rv='1'] { filter: none; }
+
+/* Bars grow from the left once their list is in view */
+[data-rv] .bar > span {
+  transform-origin: left center;
+  transition: transform 1200ms var(--ease) calc(var(--rv-d, 0ms) + 250ms), background 250ms;
+}
+[data-rv='0'] .bar > span { transform: scaleX(0); }
+[data-rv] li:nth-child(2) .bar > span, [data-rv] .load-row:nth-child(2) .bar > span { transition-delay: 330ms, 0ms; }
+[data-rv] li:nth-child(3) .bar > span { transition-delay: 410ms, 0ms; }
+[data-rv] li:nth-child(4) .bar > span { transition-delay: 490ms, 0ms; }
+[data-rv] li:nth-child(5) .bar > span { transition-delay: 570ms, 0ms; }
+[data-rv] li:nth-child(6) .bar > span { transition-delay: 650ms, 0ms; }
+[data-rv] li:nth-child(7) .bar > span { transition-delay: 730ms, 0ms; }
+
+/* Pallet levels stack up, docks drop in */
+.height-chart[data-rv] .height-col > div { transition: transform 700ms var(--ease), opacity 700ms; }
+.height-chart[data-rv='0'] .height-col > div { transform: translateY(24px); opacity: 0; }
+.height-chart[data-rv] .height-col > div:nth-of-type(2) { transition-delay: 380ms; }
+.height-chart[data-rv] .height-col > div:nth-of-type(3) { transition-delay: 460ms; }
+.height-chart[data-rv] .height-col > div:nth-of-type(4) { transition-delay: 540ms; }
+.height-chart[data-rv] .height-col > div:nth-of-type(5) { transition-delay: 620ms; }
+.height-chart[data-rv] .height-col > div:nth-of-type(6) { transition-delay: 700ms; }
+.height-chart[data-rv] .height-col > div:nth-of-type(1) { transition-delay: 300ms; }
+
+.dock-grid[data-rv] span { transition: transform 600ms var(--ease), opacity 600ms; }
+.dock-grid[data-rv='0'] span { transform: translateY(-16px); opacity: 0; }
+.dock-grid[data-rv] span:nth-child(n) { transition-delay: calc(200ms + var(--i, 0) * 40ms); }
+
+/* ================= Scroll-linked (native scroll timelines) =================
+   Progressive enhancement: only where the browser supports animation-timeline. */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 150;
+  background: linear-gradient(90deg, var(--orange), var(--orange-hot));
+  transform-origin: left center;
+  transform: scaleX(0);
+  pointer-events: none;
+  display: none;
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-progress {
+    display: block;
+    animation: rv-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+  @keyframes rv-progress { to { transform: scaleX(1); } }
+
+  /* Photos drift inside their frames as they pass through the viewport - only where safely contained */
+  .intro-img-main,
+  .gallery-frame img,
+  .region-card-img-wrap img,
+
+  .next-card-img,
+  .home-cta > img {
+    animation: rv-parallax linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  @keyframes rv-parallax {
+    from { transform: scale(1.14) translateY(-4%); }
+    to { transform: scale(1.14) translateY(4%); }
+  }
+
+  /* Industry photos pan as the rail scrolls sideways */
+  .rail-card img {
+    animation: rv-rail linear both;
+    animation-timeline: view(inline);
+  }
+  @keyframes rv-rail {
+    from { transform: scale(1.12) translateX(-5%); }
+    to { transform: scale(1.12) translateX(5%); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-rv] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .scroll-progress,
+  .intro-img-main, .walk-media > img, .gallery img, .region-card img,
+  .next-card-img, .home-cta > img, .rail-card img { animation: none !important; }
+  .scroll-progress { display: none; }
+}
