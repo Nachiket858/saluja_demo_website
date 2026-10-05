@@ -47,19 +47,18 @@ export default function CampusMap({ pick = 'city', filter = 'all', onPick, label
   useEffect(() => {
     if (!elRef.current) return;
 
-    // Use CartoDB Voyager raster tiles: clean, professional, high-contrast, modern
+    // OpenStreetMap standard tiles: no API key needed (CARTO basemaps now require one)
     const map = L.map(elRef.current, {
       scrollWheelZoom: false,
       zoomControl: false,
-      attributionControl: false,
     }).setView(VIEW, 11);
+    map.attributionControl.setPrefix(false);
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
-      subdomains: 'abcd',
-      attribution: '© OpenStreetMap, © CARTO',
+      attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     // Subtle radius rings
