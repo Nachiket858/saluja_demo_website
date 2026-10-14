@@ -18,7 +18,7 @@
   --line: rgba(15, 15, 16, 0.12);
   --line-dark: rgba(244, 242, 238, 0.12);
 
-  --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --serif: 'Instrument Serif', Georgia, serif;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 

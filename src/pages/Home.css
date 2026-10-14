@@ -33,7 +33,8 @@
 }
 .hero-word {
   display: flex;
-  font: 900 clamp(120px, 31vw, 620px)/0.8 'Big Shoulders Display', sans-serif;
+  font: 800 clamp(64px, 22vw, 440px)/0.8 var(--sans);
+  letter-spacing: -0.04em;
   color: #000;
   text-transform: uppercase;
 }
