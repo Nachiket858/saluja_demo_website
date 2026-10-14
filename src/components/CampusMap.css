@@ -22,7 +22,7 @@
 /* Crisp Leaflet Zoom Controls */
 .campus-map .leaflet-bar {
   border: none !important;
-  box-shadow: 0 8px 24px rgba(18, 23, 28, 0.14) !important;
+  box-shadow: 0 8px 24px rgba(15, 15, 16, 0.14) !important;
   border-radius: 14px !important;
   overflow: hidden;
   margin: 0 16px 24px 0 !important;
@@ -37,7 +37,7 @@
   line-height: 38px !important;
   background: transparent !important;
   color: var(--ink) !important;
-  border-bottom: 1px solid rgba(18, 23, 28, 0.08) !important;
+  border-bottom: 1px solid rgba(15, 15, 16, 0.08) !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   transition: background 200ms, color 200ms !important;
@@ -54,11 +54,11 @@
   transform: translate(-50%, -50%);
   font: 500 11px var(--sans);
   letter-spacing: 0.08em;
-  color: #7b4c34;
+  color: var(--orange-text);
   background: rgba(255, 255, 255, 0.92);
   padding: 3px 8px;
   border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(18, 23, 28, 0.08);
+  box-shadow: 0 2px 8px rgba(15, 15, 16, 0.08);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(242, 107, 44, 0.5);
+  box-shadow: 0 4px 16px rgba(244, 126, 32, 0.5);
   z-index: 2;
 }
 
@@ -122,7 +122,7 @@
   color: #fff;
   padding: 6px 12px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(18, 23, 28, 0.25);
+  box-shadow: 0 6px 20px rgba(15, 15, 16, 0.25);
   white-space: nowrap;
   pointer-events: none;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -151,9 +151,9 @@
   transition: transform 250ms var(--ease);
 }
 
-.map-smart-pin.map-pin--industry { --pin-bg: #2d6b99; }
+.map-smart-pin.map-pin--industry { --pin-bg: #2e6a88; }
 .map-smart-pin.map-pin--transport { --pin-bg: #5a6470; }
-.map-smart-pin.map-pin--city { --pin-bg: #1e252d; }
+.map-smart-pin.map-pin--city { --pin-bg: var(--navy); }
 
 .pin-icon {
   width: 28px;
@@ -165,7 +165,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(18, 23, 28, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 15, 16, 0.2);
   flex-shrink: 0;
   transition: transform 200ms var(--ease), background 200ms;
 }
@@ -184,8 +184,8 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--ink);
-  box-shadow: 0 6px 20px rgba(18, 23, 28, 0.15);
-  border: 1px solid rgba(18, 23, 28, 0.08);
+  box-shadow: 0 6px 20px rgba(15, 15, 16, 0.15);
+  border: 1px solid rgba(15, 15, 16, 0.08);
   white-space: nowrap;
   pointer-events: none;
   z-index: 10;
@@ -199,7 +199,7 @@
 .pin-bubble-time {
   font: 500 11px var(--sans);
   color: var(--orange-dark);
-  background: rgba(224, 102, 47, 0.1);
+  background: rgba(244, 126, 32, 0.1);
   padding: 2px 6px;
   border-radius: 999px;
 }
@@ -222,7 +222,7 @@
 .map-smart-pin.is-active .pin-icon {
   background: var(--orange-hot);
   border-color: #fff;
-  box-shadow: 0 0 0 4px rgba(242, 107, 44, 0.35), 0 6px 16px rgba(18, 23, 28, 0.25);
+  box-shadow: 0 0 0 4px rgba(244, 126, 32, 0.35), 0 6px 16px rgba(15, 15, 16, 0.25);
   transform: scale(1.15);
 }
 
@@ -231,7 +231,7 @@
   background: var(--ink);
   color: #fff;
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(18, 23, 28, 0.3);
+  box-shadow: 0 8px 24px rgba(15, 15, 16, 0.3);
 }
 
 .map-smart-pin.is-active .pin-bubble-title {
@@ -239,7 +239,7 @@
 }
 
 .map-smart-pin.is-active .pin-bubble-time {
-  background: rgba(242, 107, 44, 0.25);
+  background: rgba(244, 126, 32, 0.25);
   color: var(--peach);
 }
 
@@ -253,7 +253,7 @@
 .map-route-line {
   stroke-dasharray: 8 8;
   animation: route-dash 1.2s linear infinite;
-  filter: drop-shadow(0 2px 4px rgba(224, 102, 47, 0.4));
+  filter: drop-shadow(0 2px 4px rgba(244, 126, 32, 0.4));
 }
 
 @keyframes route-dash {
@@ -286,8 +286,8 @@
   -webkit-backdrop-filter: blur(12px);
   color: var(--ink);
   font: 500 13px var(--sans);
-  box-shadow: 0 6px 20px rgba(18, 23, 28, 0.1);
-  border: 1px solid rgba(18, 23, 28, 0.06);
+  box-shadow: 0 6px 20px rgba(15, 15, 16, 0.1);
+  border: 1px solid rgba(15, 15, 16, 0.06);
   transition: background 200ms, color 200ms, transform 150ms;
 }
 
@@ -310,7 +310,7 @@
   background: var(--orange-hot);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 6px 20px rgba(242, 107, 44, 0.35);
+  box-shadow: 0 6px 20px rgba(244, 126, 32, 0.35);
 }
 
 .map-tool--accent svg {
@@ -335,7 +335,7 @@
   transform: translateX(-50%);
   font: 500 12px var(--sans);
   color: #fff;
-  background: rgba(18, 23, 28, 0.8);
+  background: rgba(15, 15, 16, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 7px 16px;

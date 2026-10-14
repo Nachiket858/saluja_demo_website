@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import logo from '../assets/saluja-logo.png';
+import logo from '../assets/brand/logo-horizontal.svg';
 import { PHONE, TEL } from '../data/site.js';
 import './Nav.css';
 
@@ -45,7 +45,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`}>
       <nav className="nav-bar" aria-label="Primary">
         <Link to="/" className="nav-logo" aria-label="Saluja Warehousing home">
-          <img src={logo} alt="Saluja Warehousing" width="121" height="32" />
+          <img src={logo} alt="Saluja Warehousing" width="169" height="36" />
         </Link>
 
         <div className="nav-links">

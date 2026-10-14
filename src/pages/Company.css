@@ -11,7 +11,7 @@
   height: 4px;
   max-width: 320px;
   border-radius: 99px;
-  background: rgba(18, 23, 28, 0.08);
+  background: rgba(15, 15, 16, 0.08);
   overflow: hidden;
 }
 .story-progress > div { height: 100%; border-radius: 99px; background: var(--orange); transition: width 500ms var(--ease); }
@@ -25,9 +25,9 @@
   gap: 10px;
   transition: opacity 400ms, background 400ms, box-shadow 400ms;
 }
-.timeline-item.is-active { background: #fff; box-shadow: 0 20px 50px rgba(18, 23, 28, 0.07); }
+.timeline-item.is-active { background: #fff; box-shadow: 0 20px 50px rgba(15, 15, 16, 0.07); }
 .timeline-item.is-ahead { opacity: 0.45; }
-.timeline-year { font: 500 13px var(--sans); color: var(--orange); }
+.timeline-year { font: 500 13px var(--sans); color: var(--orange-text); }
 .timeline-title { font: 400 clamp(22px, 2vw, 28px)/1.2 var(--sans); letter-spacing: -0.02em; }
 .timeline-body { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 540px; }
 .timeline-note { margin: 12px 0 0; padding-inline: clamp(24px, 3vw, 36px); }
@@ -49,7 +49,7 @@
   object-fit: cover;
   object-position: 50% 20%;
   border-radius: 28px;
-  background: #2a3540;
+  background: #1d3a4a;
 }
 .lead-monogram {
   position: absolute;
@@ -58,8 +58,8 @@
   width: clamp(116px, 11vw, 150px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--blue);
-  border: 8px solid var(--navy);
+  background: var(--navy-deep);
+  border: 6px solid var(--orange);
   display: flex;
   flex-direction: column;
   align-items: center;

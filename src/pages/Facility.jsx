@@ -147,7 +147,7 @@ export default function Facility() {
                 <div className="height-col" style={{ height: '85.7%' }}>
                   <span className="height-col-label is-ours">Saluja · 6 levels</span>
                   {Array.from({ length: 6 }, (_, i) => (
-                    <div key={i} style={{ background: i % 2 ? '#E8875A' : 'var(--orange)' }} />
+                    <div key={i} style={{ background: i % 2 ? '#F8A564' : 'var(--orange)' }} />
                   ))}
                 </div>
                 <div className="height-col" style={{ height: '50%' }}>

@@ -1,18 +1,21 @@
 /* ---------- Tokens ---------- */
 :root {
+  /* Brand palette: navy #0F3B52, orange #F47E20, background #F4F2EE, text #0F0F10 */
   --bg: #f4f2ee;
-  --ink: #12171c;
-  --muted: #5b636b;
+  --ink: #0f0f10;
+  --muted: #57606a;
   --faint: #8a9098;
-  --orange: #e0662f;
-  --orange-hot: #f26b2c;
-  --orange-dark: #c9552a;
-  --peach: #f5a47e;
-  --blue: #38688e;
-  --navy: #0f1b26;
+  --orange: #f47e20;
+  --orange-hot: #f47e20;
+  --orange-dark: #dc6a10;
+  --orange-text: #ad540b;  /* small orange text; 4.6:1 on --bg */
+  --peach: #f9b882;
+  --blue: #2e6a88;
+  --navy: #0f3b52;
+  --navy-deep: #0a2a3b;
   --sand: #eae6df;
   --stone: #e3ded6;
-  --line: rgba(18, 23, 28, 0.12);
+  --line: rgba(15, 15, 16, 0.12);
   --line-dark: rgba(244, 242, 238, 0.12);
 
   --sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -59,7 +62,7 @@ button, input, textarea { font: inherit; color: inherit; }
   top: 8px;
   z-index: 200;
   background: var(--ink);
-  color: #f4f2ee;
+  color: var(--bg);
   padding: 10px 14px;
   border-radius: 8px;
 }
@@ -93,7 +96,7 @@ button, input, textarea { font: inherit; color: inherit; }
   border-radius: 32px;
   background: var(--sand);
 }
-.band--dark { background: var(--navy); color: #f4f2ee; }
+.band--dark { background: var(--navy); color: var(--bg); }
 .band > .container { padding-block: var(--band-y); }
 
 .split {
@@ -130,12 +133,13 @@ button, input, textarea { font: inherit; color: inherit; }
   font: 500 12px/1.2 var(--sans);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--orange-text);
 }
 .h2 {
   margin: 0;
   font: 400 clamp(32px, 3.4vw, 52px)/1.08 var(--sans);
   letter-spacing: -0.03em;
+  color: var(--navy);
   text-wrap: balance;
 }
 .em {
@@ -153,9 +157,12 @@ button, input, textarea { font: inherit; color: inherit; }
   max-width: 520px;
 }
 .band--dark .lead { color: rgba(244, 242, 238, 0.72); }
+.band--dark .h2 { color: inherit; }
+.band--dark .eyebrow,
+.band--dark .unit { color: var(--orange); }
 .unit {
   font: italic 400 0.6em var(--serif);
-  color: var(--orange);
+  color: var(--orange-text);
   margin-left: 4px;
   letter-spacing: 0;
 }
@@ -174,9 +181,9 @@ button, input, textarea { font: inherit; color: inherit; }
   align-self: flex-start;
   transition: background 250ms, color 250ms, border-color 250ms;
 }
-.btn--outline { border: 1px solid rgba(18, 23, 28, 0.2); }
+.btn--outline { border: 1px solid rgba(15, 15, 16, 0.2); }
 .btn--outline:hover { border-color: var(--ink); background: #fff; }
-.btn--dark { height: 52px; padding: 0 24px; background: var(--ink); color: #fff; }
+.btn--dark { height: 52px; padding: 0 24px; background: var(--navy); color: #fff; }
 .btn--dark:hover { background: var(--orange); }
 
 .icon-btn {
@@ -185,7 +192,7 @@ button, input, textarea { font: inherit; color: inherit; }
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1px solid rgba(18, 23, 28, 0.2);
+  border: 1px solid rgba(15, 15, 16, 0.2);
   background: transparent;
   display: flex;
   align-items: center;
@@ -193,8 +200,8 @@ button, input, textarea { font: inherit; color: inherit; }
   font-size: 18px;
   transition: background 250ms, color 250ms;
 }
-.icon-btn:hover { background: var(--ink); color: #fff; }
-.icon-btn--dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+.icon-btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+.icon-btn--dark { background: var(--navy); color: #fff; border-color: var(--navy); }
 .icon-btn--dark:hover { background: var(--orange); border-color: var(--orange); }
 
 /* ---------- Glass chip on photos ---------- */
@@ -214,7 +221,7 @@ button, input, textarea { font: inherit; color: inherit; }
   display: block;
   height: 8px;
   border-radius: 99px;
-  background: rgba(18, 23, 28, 0.08);
+  background: rgba(15, 15, 16, 0.08);
   overflow: hidden;
 }
 .bar > span { display: block; height: 100%; border-radius: 99px; transition: background 250ms, width 500ms var(--ease); }

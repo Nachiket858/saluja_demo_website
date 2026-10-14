@@ -54,7 +54,7 @@
   margin: 0;
   font: 400 clamp(44px, 6.2vw, 104px)/0.98 var(--sans);
   letter-spacing: -0.05em;
-  color: var(--ink);
+  color: var(--navy);
   text-wrap: balance;
 }
 .page-hero-title .em { color: var(--orange); }
@@ -117,8 +117,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(0deg, rgba(15, 27, 38, 0.62) 0%, rgba(15, 27, 38, 0) 46%),
-    linear-gradient(180deg, rgba(15, 27, 38, 0.32) 0%, rgba(15, 27, 38, 0) 26%);
+    linear-gradient(0deg, rgba(10, 42, 59, 0.62) 0%, rgba(10, 42, 59, 0) 46%),
+    linear-gradient(180deg, rgba(10, 42, 59, 0.32) 0%, rgba(10, 42, 59, 0) 26%);
 }
 
 .page-hero-badge {
@@ -152,8 +152,8 @@
   animation: ph-ping 2200ms ease-out infinite;
 }
 @keyframes ph-ping {
-  0% { box-shadow: 0 0 0 0 rgba(242, 107, 44, 0.6); }
-  70%, 100% { box-shadow: 0 0 0 10px rgba(242, 107, 44, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(244, 126, 32, 0.6); }
+  70%, 100% { box-shadow: 0 0 0 10px rgba(244, 126, 32, 0); }
 }
 
 .page-hero-aside {
@@ -212,8 +212,8 @@
 /* CTA sits top-right so the overlapping spec strip can't cover it */
 .page-hero--stack .page-hero-aside { left: auto; right: 20px; bottom: auto; top: 20px; }
 /* The top of the photo is bright, so the glass CTA needs a darker tint here */
-.page-hero--stack .page-hero-aside > * { background: rgba(15, 27, 38, 0.55); }
-.page-hero--stack .page-hero-media > .page-hero-badge { background: rgba(15, 27, 38, 0.45); }
+.page-hero--stack .page-hero-aside > * { background: rgba(10, 42, 59, 0.55); }
+.page-hero--stack .page-hero-media > .page-hero-badge { background: rgba(10, 42, 59, 0.45); }
 @media (min-width: 960px) {
   .page-hero--stack .page-hero-head { grid-template-columns: auto minmax(280px, 420px); justify-content: space-between; }
   .page-hero--stack .page-hero-title { white-space: nowrap; }
@@ -240,8 +240,8 @@
   isolation: isolate;
   color: #fff;
   background:
-    radial-gradient(circle at 78% 50%, rgba(56, 104, 142, 0.45), transparent 55%),
-    radial-gradient(circle at 10% 110%, rgba(224, 102, 47, 0.22), transparent 45%),
+    radial-gradient(circle at 78% 50%, rgba(46, 106, 136, 0.45), transparent 55%),
+    radial-gradient(circle at 10% 110%, rgba(244, 126, 32, 0.22), transparent 45%),
     var(--navy);
 }
 /* Faint survey grid */
@@ -285,7 +285,7 @@
   stroke-width: 1;
   animation: ph-spin 120s linear infinite;
 }
-.page-hero-rings .is-dashed { stroke: rgba(245, 164, 126, 0.5); stroke-dasharray: 3 9; }
+.page-hero-rings .is-dashed { stroke: rgba(249, 184, 130, 0.5); stroke-dasharray: 3 9; }
 .page-hero-ticks line { stroke: rgba(255, 255, 255, 0.35); }
 @keyframes ph-spin { to { transform: rotate(360deg); } }
 
@@ -313,7 +313,7 @@
   to { clip-path: circle(50% at 50% 50%); }
 }
 .page-hero--orbit .page-hero-shade {
-  background: radial-gradient(circle, transparent 40%, rgba(15, 27, 38, 0.55) 100%);
+  background: radial-gradient(circle, transparent 40%, rgba(10, 42, 59, 0.55) 100%);
 }
 
 /* Campus pin with a radar ping at the centre of the photo */

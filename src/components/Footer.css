@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(180deg, #161e27 0%, #0d1217 100%);
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
   color: #f4f2ee;
   border-radius: 36px 36px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -34,10 +34,10 @@
 }
 
 .footer-brand img {
-  height: 36px;
+  height: 52px;
   width: auto;
   align-self: flex-start;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  margin-bottom: 4px;
 }
 
 .footer-brand p {

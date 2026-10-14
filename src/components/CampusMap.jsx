@@ -65,7 +65,7 @@ export default function CampusMap({ pick = 'city', filter = 'all', onPick, label
     [10, 20, 30].forEach((km) => {
       L.circle(HOME, {
         radius: km * 1000,
-        color: '#E0662F',
+        color: '#F47E20',
         weight: 1,
         opacity: 0.25,
         fill: false,
@@ -130,7 +130,7 @@ export default function CampusMap({ pick = 'city', filter = 'all', onPick, label
       // Connecting highway route line
       marker.line = L.polyline([HOME, p.c], {
         className: 'map-route-line',
-        color: '#E0662F',
+        color: '#F47E20',
         weight: 3,
         opacity: isInitialActive ? 0.95 : 0,
         dashArray: '6 8',

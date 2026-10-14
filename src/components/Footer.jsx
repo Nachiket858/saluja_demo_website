@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoWhite from '../assets/saluja-logo-white.png';
+import logoWhite from '../assets/brand/logo-horizontal-full-white.svg';
 import { PHONE, TEL, WHATSAPP } from '../data/site.js';
 import './Footer.css';
 
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src={logoWhite} alt="Saluja Warehousing" width="138" height="36" />
+            <img src={logoWhite} alt="Saluja Warehousing Commercials Pvt. Ltd." width="198" height="52" />
             <p>High-clearance industrial warehousing on the Aurangabad–Ahmednagar highway beside Waluj MIDC. Operating since 2008.</p>
             <div className="footer-status">
               <span className="live-dot" aria-hidden="true" />
@@ -45,7 +45,7 @@ export default function Footer() {
           </address>
         </div>
         <div className="footer-base">
-          <span>© {new Date().getFullYear()} Saluja Warehousing</span>
+          <span>© {new Date().getFullYear()} Saluja Warehousing Commercials Pvt. Ltd.</span>
           <span>Imagery and figures are sample content for review</span>
         </div>
       </div>

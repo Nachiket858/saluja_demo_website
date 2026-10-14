@@ -19,9 +19,9 @@
   min-height: 320px;
   align-items: flex-end;
   padding: clamp(32px, 5vw, 72px);
-  background: #2a3540;
+  background: #1d3a4a;
 }
-.next-card--image:hover { background: #2a3540; }
+.next-card--image:hover { background: #1d3a4a; }
 .next-card-img {
   position: absolute;
   inset: 0;
@@ -31,7 +31,7 @@
   transition: transform 900ms var(--ease);
 }
 .next-card--image:hover .next-card-img { transform: scale(1.04); }
-.next-card-shade { position: absolute; inset: 0; background: rgba(15, 27, 38, 0.6); }
+.next-card-shade { position: absolute; inset: 0; background: rgba(10, 42, 59, 0.6); }
 
 .next-card-text { position: relative; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .next-card-kicker {
