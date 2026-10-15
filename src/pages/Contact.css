@@ -67,6 +67,18 @@
 .contact-facts > div + div { padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, 0.16); }
 .contact-facts dd { margin: 0; font: 300 clamp(20px, 1.8vw, 26px)/1 var(--sans); letter-spacing: -0.02em; white-space: nowrap; }
 .contact-facts dt { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.65); }
+@media (max-width: 479px) {
+  .contact-facts { grid-template-columns: 1fr; padding-top: 0; }
+  .contact-facts > div,
+  .contact-facts > div + div {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-left: 0;
+  }
+  .contact-facts > div + div { border-top: 1px solid rgba(255, 255, 255, 0.16); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .contact-side-media, .contact-side-body > *, .brief, .brief-sent, .contact-chip-dot { animation: none !important; }
@@ -78,7 +90,7 @@
 }
 .contact-side-body {
   position: relative;
-  padding: 120px clamp(24px, 3.4vw, 48px) clamp(24px, 3.4vw, 48px);
+  padding: clamp(100px, 12vw, 120px) clamp(20px, 3.4vw, 48px) clamp(24px, 3.4vw, 48px);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -87,7 +99,7 @@
   margin: 0;
   font: 400 clamp(38px, 4.4vw, 68px)/1.04 var(--sans);
   letter-spacing: -0.04em;
-  color: var(--navy);
+  color: #fff;
   text-wrap: balance;
 }
 .contact-quote {
@@ -241,6 +253,15 @@
   font: 500 14px var(--sans);
 }
 .brief-edit:hover { border-color: var(--bg); }
+
+@media (max-width: 600px) {
+  .contact-side, .brief, .brief-sent { border-radius: 26px; }
+  .brief { padding: 24px 18px; gap: 28px; }
+  .contact-quote { padding: 16px 18px; font-size: 17px; }
+  .chips { gap: 8px; }
+  .chip { height: 40px; padding: 0 16px !important; font-size: 13px; }
+  .brief-submit { height: 56px; padding-left: 22px; }
+}
 
 /* Two columns: the photo panel sticks, and only now does the form need
    extra top padding to clear the floating nav. */

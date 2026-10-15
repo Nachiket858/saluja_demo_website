@@ -35,10 +35,10 @@ const HERO_STATS = [
 ];
 
 const STATS = [
-  { v: 2008, u: '', l: 'Operating on the Nagar Highway since' },
-  { v: 150000, u: 'sq ft', l: 'Campus area' },
-  { v: 12, u: 'm', l: 'Clear height' },
-  { v: 54000, u: 'sq ft', l: 'Available now' },
+  { v: 2008, u: '', l: 'Operating since', d: 'On the Nagar Highway, owner-run' },
+  { v: 150000, u: 'sq ft', l: 'Campus area', d: 'Beside Waluj MIDC' },
+  { v: 12, u: 'm', l: 'Clear height', d: 'Six pallet levels under the eaves' },
+  { v: 54000, u: 'sq ft', l: 'Available now', d: 'Site visits Mon–Sat' },
 ];
 
 const SPECS = [
@@ -299,17 +299,20 @@ function Intro() {
           </div>
         </div>
 
-        <dl ref={statsRef} className="intro-stats">
-          {STATS.map((s, i) => (
-            <div key={s.l} className="intro-stat">
-              <dt>{s.l}</dt>
-              <dd>
-                <span ref={(n) => (valueRefs.current[i] = n)}>{s.v === 2008 ? '2008' : fmt(s.v)}</span>
-                {s.u && <span className="intro-stat-unit">{s.u}</span>}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <div className="intro-stats divided">
+          <dl ref={statsRef} className="intro-stats-grid">
+            {STATS.map((s, i) => (
+              <div key={s.l} className="intro-stat">
+                <dt>{s.l}</dt>
+                <dd className="intro-stat-value">
+                  <span ref={(n) => (valueRefs.current[i] = n)}>{s.v === 2008 ? '2008' : fmt(s.v)}</span>
+                  {s.u && <span className="unit">{s.u}</span>}
+                </dd>
+                <dd className="intro-stat-note">{s.d}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

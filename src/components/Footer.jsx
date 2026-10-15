@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logoWhite from '../assets/brand/logo-horizontal-white.svg';
 import { WORDMARK } from '../data/brand.js';
-import { DIRECTIONS, PHONE, TEL, WHATSAPP, prefersReducedMotion } from '../data/site.js';
+import { DIRECTIONS, PHONE, TEL, WHATSAPP } from '../data/site.js';
 import './Footer.css';
 
 const LINKS = [
@@ -23,8 +23,6 @@ const Icon = ({ children }) => (
 );
 
 export default function Footer() {
-  const toTop = () => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
-
   return (
     <footer className="footer">
       <div className="container footer-inner">
@@ -32,10 +30,10 @@ export default function Footer() {
           <Link to="/" className="footer-logo" aria-label="Saluja Warehousing home">
             <img src={logoWhite} alt="Saluja Warehousing" width="207" height="44" />
           </Link>
-          <button type="button" className="reset-btn footer-top-btn" onClick={toTop}>
-            Back to top
-            <span className="footer-top-icon" aria-hidden="true">↑</span>
-          </button>
+          <span className="footer-status">
+            <span className="live-dot" aria-hidden="true" />
+            Campus active 24×7 · Secure yard &amp; docks
+          </span>
         </div>
 
         <div className="footer-grid">
@@ -44,10 +42,6 @@ export default function Footer() {
               Industrial warehousing on the Nagar Highway, <span className="em">since 2008</span>.
             </p>
             <p className="footer-blurb">High-clearance space beside Waluj MIDC, reachable by heavy vehicles and run by the family that owns it.</p>
-            <span className="footer-status">
-              <span className="live-dot" aria-hidden="true" />
-              Campus active 24×7 · Secure yard &amp; docks
-            </span>
           </div>
 
           <nav className="footer-col footer-nav" aria-label="Footer">

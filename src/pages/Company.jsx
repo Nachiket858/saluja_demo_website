@@ -166,7 +166,12 @@ export default function Company() {
       </section>
 
       <div className="company-gap" />
-      <NextCard to="/contact" kicker="Work with us" title={<>Check <span className="em">availability</span></>} />
+      <NextCard
+        to="/contact"
+        kicker="Work with us"
+        image={IMG('1592838064575-70ed626d3a0e', 2000)}
+        title={<>Check <span className="em">availability</span></>}
+      />
     </>
   );
 }

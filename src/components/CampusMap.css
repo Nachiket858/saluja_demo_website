@@ -345,3 +345,13 @@
 @media (prefers-reduced-motion: reduce) {
   .beacon-wave, .map-route-line { animation: none; }
 }
+
+/* Phones: compact tools so they don't crowd the pins */
+@media (max-width: 520px) {
+  .map-tools { right: 10px; top: 10px; gap: 6px; }
+  .map-tool { height: 36px; padding: 0 12px; font-size: 12px; }
+  .map-tool:not(.map-tool--accent) span { display: none; }
+  .map-tool:not(.map-tool--accent) { width: 36px; padding: 0; justify-content: center; }
+  .campus-map .leaflet-bar { margin: 0 10px 16px 0 !important; }
+  .campus-map .leaflet-bar a { width: 34px !important; height: 34px !important; line-height: 34px !important; }
+}

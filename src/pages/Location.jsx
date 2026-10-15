@@ -128,11 +128,13 @@ export default function Location() {
                   <div><dd>{current[3]}</dd><dt>Drive time</dt></div>
                   <div><dd>{distanceKm(current[0]).toFixed(1)} km</dd><dt>Direct distance</dt></div>
                 </dl>
-                <div className="map-card-nav">
-                  <button type="button" className="reset-btn" onClick={() => step(-1)} aria-label="Previous place">←</button>
-                  <span>{pickIndex + 1} of {visible.length}</span>
-                  <button type="button" className="reset-btn" onClick={() => step(1)} aria-label="Next place">→</button>
-                </div>
+                {visible.length > 1 && (
+                  <div className="map-card-nav">
+                    <button type="button" className="reset-btn" onClick={() => step(-1)} aria-label="Previous place">←</button>
+                    <span>{pickIndex + 1} of {visible.length}</span>
+                    <button type="button" className="reset-btn" onClick={() => step(1)} aria-label="Next place">→</button>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -191,7 +193,11 @@ export default function Location() {
         </div>
       </section>
 
-      <NextCard to="/company" title={<>The <span className="em">company</span></>} />
+      <NextCard
+        to="/company"
+        image={IMG('1586528116311-ad8dd3c8310d', 2000)}
+        title={<>The <span className="em">company</span></>}
+      />
     </>
   );
 }

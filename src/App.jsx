@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
+import BackToTop from './components/BackToTop.jsx';
 import Home from './pages/Home.jsx';
 import Facility from './pages/Facility.jsx';
 import Location from './pages/Location.jsx';
@@ -39,6 +40,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

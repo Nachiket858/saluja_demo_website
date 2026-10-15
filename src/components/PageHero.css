@@ -89,6 +89,23 @@
   white-space: nowrap;
 }
 .page-hero-facts dt { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+/* Phones: three columns are too narrow, so each fact becomes a ruled row */
+@media (max-width: 479px) {
+  .page-hero-facts { grid-template-columns: 1fr; margin-top: 4px; }
+  .page-hero-facts > div,
+  .page-hero-facts > div + div {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-left: 0;
+  }
+  .page-hero-facts > div + div { border-top: 1px solid var(--line); }
+  .page-hero--orbit .page-hero-facts > div + div { border-top-color: rgba(255, 255, 255, 0.16); }
+  .page-hero-facts dd { font-size: 22px; }
+  .page-hero-facts dt { font-size: 11px; }
+}
 
 /* ---------- Shared: photo ---------- */
 .page-hero-media {
@@ -349,7 +366,7 @@
   .page-hero--orbit .page-hero-frame { grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); }
 }
 @media (max-width: 600px) {
-  .page-hero--orbit .page-hero-frame { border-radius: 26px; }
+  .page-hero--orbit .page-hero-frame { border-radius: 26px; padding: 32px 20px; }
   .page-hero-orbit { width: min(100%, 360px); }
 }
 

@@ -159,6 +159,11 @@
   /* Map grows to fill whatever height the list column gives the frame */
   .map-frame .campus-map-wrap { flex: 1 1 auto; height: auto; min-height: min(64vh, 560px); }
   .map-frame .campus-map { position: absolute; inset: 0; height: auto; }
+  .map-frame .map-hint { left: auto; right: 64px; bottom: 30px; transform: none; }
+}
+/* Card goes horizontal only where the map column is wide: full-width map on
+   tablets, or the two-column layout on large screens. */
+@media (min-width: 760px) and (max-width: 959px), (min-width: 1240px) {
   .map-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto auto;
@@ -180,12 +185,21 @@
     column-gap: 28px;
   }
   .map-card-stats > div + div { padding-left: 28px; }
+  .map-card-stats dd { white-space: nowrap; }
   .map-card-nav { grid-area: nav; margin: 0; gap: 12px; }
-  .map-frame .map-hint { left: auto; right: 64px; bottom: 30px; transform: none; }
 }
 @media (max-width: 759px) {
   .map-frame .map-hint { display: none; }
   .map-legend { max-width: calc(100% - 100px); }
+}
+@media (max-width: 520px) {
+  .map-frame { border-radius: 22px; }
+  .map-frame .campus-map-wrap { height: 340px; }
+  .map-legend { left: 10px; top: auto; bottom: 10px; max-width: calc(100% - 70px); padding: 6px 12px; gap: 4px 10px; font-size: 11px; }
+  .map-card { padding: 18px; }
+  .map-card-name { font-size: 21px; }
+  .seg { align-self: stretch; justify-content: space-between; }
+  .seg-btn { flex: 1; padding: 0 10px !important; font-size: 13px; }
 }
 
 /* Drive times */
@@ -206,9 +220,9 @@
 .bar--dark { height: 10px; background: rgba(244, 242, 238, 0.08); }
 .dest-note { margin: 10px 0 0; padding: 0 16px; font-size: 12px; color: rgba(244, 242, 238, 0.45); }
 @media (max-width: 480px) {
-  .dest-row { grid-template-columns: 84px minmax(0, 1fr) 56px; gap: 12px; padding-inline: 10px; }
-  .dest-name { font-size: 15px; }
-  .dest-time { font-size: 15px; }
+  .dest-row { grid-template-columns: 96px minmax(0, 1fr) 52px; gap: 10px; padding-inline: 8px; }
+  .dest-name { font-size: 14px; }
+  .dest-time { font-size: 14px; }
 }
 
 /* Region */

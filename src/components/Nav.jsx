@@ -92,10 +92,13 @@ export default function Nav() {
               <span className="nav-menu-arrow" aria-hidden="true">→</span>
             </NavLink>
           ))}
-          <a href={TEL} className="nav-menu-phone">
-            <span className="live-dot" aria-hidden="true" />
-            {PHONE}
-          </a>
+          <div className="nav-menu-foot">
+            <a href={TEL} className="nav-menu-phone">
+              <span className="live-dot" aria-hidden="true" />
+              {PHONE}
+            </a>
+            <Link to="/contact" className="nav-menu-cta">Check availability <span aria-hidden="true">→</span></Link>
+          </div>
         </div>
       )}
     </header>
