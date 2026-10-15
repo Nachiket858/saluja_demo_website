@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MARK } from '../data/brand.js';
+import { DIRECTIONS, HOME_COORDS } from '../data/site.js';
 import './CampusMap.css';
 
-export const HOME = [19.842, 75.236];
+export const HOME = HOME_COORDS;
 const VIEW = [19.83, 75.33];
-const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${HOME[0]},${HOME[1]}`;
 
 export const MAP_PLACES = {
   midc: { n: 'Waluj MIDC', c: [19.856, 75.218], t: 'industry', drive: 'Adjacent', dist: '2 km' },
