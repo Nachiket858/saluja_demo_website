@@ -11,7 +11,7 @@
   gap: 20px;
   text-align: center;
 }
-.nf-seal { width: clamp(132px, 14vw, 176px); margin-bottom: 12px; }
+.nf-mark { width: clamp(84px, 8vw, 112px); height: auto; margin-bottom: 16px; }
 .nf-title { font-size: clamp(40px, 5vw, 72px); }
 .nf .lead { max-width: 480px; }
 .nf-actions {

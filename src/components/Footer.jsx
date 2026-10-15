@@ -45,7 +45,7 @@ export default function Footer() {
           </address>
         </div>
         <div className="footer-base">
-          <span>© {new Date().getFullYear()} Saluja Warehousing Commercials Pvt. Ltd.</span>
+          <span>© {new Date().getFullYear()} Saluja Warehousing</span>
           <span className="footer-credit">
             Developed and maintained by{' '}
             <a href="https://idyllictechnology.com/" target="_blank" rel="noopener">Idyllic Technology Solution</a>

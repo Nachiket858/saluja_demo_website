@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import BrandSeal from '../components/BrandSeal.jsx';
+import BrandMark from '../components/BrandMark.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
 import { PHONE, TEL } from '../data/site.js';
 import './NotFound.css';
@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <section className="nf" aria-labelledby="nf-h">
       <div className="container nf-inner">
-        <BrandSeal className="nf-seal" />
+        <BrandMark className="nf-mark" />
         <span className="eyebrow">Error 404</span>
         <h1 id="nf-h" className="h2 nf-title">This aisle is <span className="em">empty</span>.</h1>
         <p className="lead">The page you were looking for has moved or never existed. The campus, though, is right where it has been since 2008.</p>

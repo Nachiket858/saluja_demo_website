@@ -1,6 +1,7 @@
 /* ---------- Tokens ---------- */
 :root {
-  /* Brand palette: navy #0F3B52, orange #F47E20, background #F4F2EE, text #0F0F10 */
+  /* Brand palette (client kit): navy #0F3B52, orange #F47E20, background #F4F2EE, text #0F0F10.
+     Every other colour is a tint or shade of these, or a neutral. */
   --bg: #f4f2ee;
   --ink: #0f0f10;
   --muted: #57606a;
@@ -18,8 +19,8 @@
   --stone: #e3ded6;
   --stone-dark: #c9c3b8;
   --track: #f1eee9;        /* empty bar tracks */
-  --live: #2fb36a;         /* status dots only */
-  --error: #b4441a;
+  --live: var(--orange);   /* status dots */
+  --error: var(--orange-text);
   --line: rgba(15, 15, 16, 0.12);
   --line-dark: rgba(244, 242, 238, 0.12);
 

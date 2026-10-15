@@ -55,12 +55,25 @@
   position: absolute;
   left: 0;
   bottom: 10%;
-  width: clamp(132px, 12vw, 168px);
+  width: clamp(124px, 11.5vw, 156px);
   aspect-ratio: 1;
-  padding: clamp(8px, 0.9vw, 12px);
   border-radius: 50%;
   background: var(--navy-deep);
+  border: 6px solid var(--orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.lead-monogram .lead-monogram-mark { width: clamp(24px, 2.2vw, 30px); height: auto; margin-bottom: 6px; }
+.lead-monogram span { font: italic 400 clamp(30px, 2.8vw, 40px)/1 var(--serif); }
+.lead-monogram .lead-monogram-kicker {
+  font: 500 11px var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.75);
 }
 .lead-person {
   display: flex;

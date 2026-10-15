@@ -68,7 +68,7 @@ function ContactForm() {
   const sTime = TIMES[form.time];
   const filled = [true, !!form.use, !!form.sector, !!form.time, !!(form.name && (form.phone || form.email)), !!form.note].filter(Boolean).length;
   const isBad = (k) => tried && ((k === 'name' && !form.name.trim()) || (k === 'phone' && !form.phone.trim() && !form.email.trim()));
-  const ref = 'SWCPL-' + String(form.area / 1000).padStart(3, '0') + String((form.name.length * 37) % 97).padStart(2, '0');
+  const ref = 'SW-' + String(form.area / 1000).padStart(3, '0') + String((form.name.length * 37) % 97).padStart(2, '0');
 
   const submit = (e) => {
     e.preventDefault();

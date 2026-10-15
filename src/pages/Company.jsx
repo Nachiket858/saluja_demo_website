@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import BrandSeal from '../components/BrandSeal.jsx';
+import BrandMark from '../components/BrandMark.jsx';
 import PageHero from '../components/PageHero.jsx';
 import NextCard from '../components/NextCard.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
@@ -107,7 +107,7 @@ export default function Company() {
         <div className="container split">
           <div className="lead-media">
             <img src={portrait} alt="Jeetendrasingh Saluja, Proprietor of Saluja Warehousing" loading="lazy" width="800" height="800" />
-            <div className="lead-monogram"><BrandSeal tone="light" /></div>
+            <div className="lead-monogram"><BrandMark tone="light" className="lead-monogram-mark" /><span className="lead-monogram-kicker">Since</span><span>2008</span></div>
           </div>
           <div className="stack">
             <span className="eyebrow">Leadership</span>

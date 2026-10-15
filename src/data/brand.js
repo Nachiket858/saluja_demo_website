@@ -20,6 +20,3 @@ export const WORDMARK = {
     { w: 98.5, d: 'M38.41 83.63L60.09 83.63L50.8 26.43L47.7 26.43ZM64.22 109.24L34.28 109.24L30.35 134.23L0 134.23L24.57 0L74.55 0L98.5 134.23L68.14 134.23Z' },
   ],
 };
-
-// Where the mark sits inside the seal ring artwork, in % of the ring box
-export const SEAL_MARK = { left: 23.23, top: 28.24, width: 53.54 };

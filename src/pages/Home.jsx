@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import BrandSeal from '../components/BrandSeal.jsx';
+import BrandMark from '../components/BrandMark.jsx';
 import CampusMap from '../components/CampusMap.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
 import { IMG, PHONE, TEL, fmt, prefersReducedMotion } from '../data/site.js';
@@ -292,7 +292,9 @@ function Intro() {
             <img className="intro-img-main" src={IMG('1587293852726-70cdb56c2866', 1400)} alt="High pallet racking stocked with cartons" loading="lazy" />
             <img className="intro-img-sub" src={IMG('1616401784845-180882ba9ba8', 900)} alt="Reach truck working an aisle" loading="lazy" />
             <div className="intro-badge">
-              <BrandSeal />
+              <BrandMark tone="light" className="intro-badge-mark" />
+              <span>Since</span>
+              <strong>2008</strong>
             </div>
           </div>
         </div>
