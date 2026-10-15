@@ -1,0 +1,24 @@
+/* ---------- Brand fonts ----------
+   Self-hosted from the client's brand kit (SIL OFL, licences in /fonts),
+   subset to Latin + the punctuation and symbols the site uses. */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/instrument-serif.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/instrument-serif-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

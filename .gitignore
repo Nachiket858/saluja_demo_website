@@ -33,3 +33,6 @@ Thumbs.db
 .cache
 coverage
 .vite
+
+# Client branding kit (kept local, never committed)
+Brandings/
