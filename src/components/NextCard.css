@@ -19,9 +19,9 @@
   min-height: 320px;
   align-items: flex-end;
   padding: clamp(32px, 5vw, 72px);
-  background: #1d3a4a;
+  background: var(--navy-deep);
 }
-.next-card--image:hover { background: #1d3a4a; }
+.next-card--image:hover { background: var(--navy-deep); }
 .next-card-img {
   position: absolute;
   inset: 0;

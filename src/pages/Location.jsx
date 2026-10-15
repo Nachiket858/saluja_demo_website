@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BrandMark from '../components/BrandMark.jsx';
 import PageHero from '../components/PageHero.jsx';
 import NextCard from '../components/NextCard.jsx';
 import CampusMap, { distanceKm } from '../components/CampusMap.jsx';
@@ -102,7 +103,7 @@ export default function Location() {
           <div className="map-frame">
             <CampusMap pick={pick} filter={filter} onPick={setPick} label="Interactive map of Saluja Waluj Campus and surroundings" />
             <div className="map-legend" aria-hidden="true">
-              <span><i style={{ background: 'var(--orange)' }} />Saluja</span>
+              <span><BrandMark className="map-legend-mark" />Saluja</span>
               <span><i style={{ background: CAT_DOT.industry }} />Industry</span>
               <span><i style={{ background: CAT_DOT.transport }} />Transport</span>
               <span><i style={{ background: CAT_DOT.city }} />City</span>

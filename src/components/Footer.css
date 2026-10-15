@@ -1,6 +1,6 @@
 .footer {
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-  color: #f4f2ee;
+  color: var(--bg);
   border-radius: 36px 36px 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;

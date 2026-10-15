@@ -40,7 +40,7 @@
 
 /* Leadership */
 .lead-media { position: relative; height: clamp(380px, 38vw, 540px); }
-.lead-media img {
+.lead-media > img {
   position: absolute;
   right: 0;
   top: 0;
@@ -49,30 +49,18 @@
   object-fit: cover;
   object-position: 50% 20%;
   border-radius: 28px;
-  background: #1d3a4a;
+  background: var(--navy-deep);
 }
 .lead-monogram {
   position: absolute;
   left: 0;
   bottom: 10%;
-  width: clamp(116px, 11vw, 150px);
+  width: clamp(132px, 12vw, 168px);
   aspect-ratio: 1;
+  padding: clamp(8px, 0.9vw, 12px);
   border-radius: 50%;
   background: var(--navy-deep);
-  border: 6px solid var(--orange);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-.lead-monogram span { font: italic 400 clamp(32px, 3vw, 42px)/1 var(--serif); }
-.lead-monogram .lead-monogram-kicker {
-  font: 500 11px var(--sans);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(244, 242, 238, 0.75);
 }
 .lead-person {
   display: flex;

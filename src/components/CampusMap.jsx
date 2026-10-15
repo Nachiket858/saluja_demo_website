@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { MARK } from '../data/brand.js';
 import './CampusMap.css';
 
 export const HOME = [19.842, 75.236];
@@ -27,6 +28,9 @@ export function distanceKm(key) {
   const a = Math.sin(rad(la2 - la1) / 2) ** 2 + Math.cos(rad(la1)) * Math.cos(rad(la2)) * Math.sin(rad(lo2 - lo1) / 2) ** 2;
   return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
+
+// Brand mark for the campus beacon (Leaflet markers take an HTML string)
+const MARK_HTML = `<svg viewBox="0 0 ${MARK.w} ${MARK.h}" aria-hidden="true"><path style="fill:var(--navy)" d="${MARK.body}"/><path style="fill:var(--orange)" d="${MARK.accent}"/></svg>`;
 
 // Category icons for pins
 const PIN_ICONS = {
@@ -61,7 +65,7 @@ export default function CampusMap({ pick = 'city', filter = 'all', onPick, label
       attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    // Subtle radius rings
+    // Subtle radius rings (Leaflet path options need literal colours: brand orange)
     [10, 20, 30].forEach((km) => {
       L.circle(HOME, {
         radius: km * 1000,
@@ -91,7 +95,7 @@ export default function CampusMap({ pick = 'city', filter = 'all', onPick, label
         html: `
           <div class="map-home-beacon">
             <span class="beacon-wave"></span>
-            <span class="beacon-core"><i></i></span>
+            <span class="beacon-core">${MARK_HTML}</span>
             <div class="beacon-label">
               <strong>Saluja Waluj Campus</strong>
               <small>1,50,000 sq ft</small>

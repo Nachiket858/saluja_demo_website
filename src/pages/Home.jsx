@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BrandSeal from '../components/BrandSeal.jsx';
 import CampusMap from '../components/CampusMap.jsx';
 import usePageMeta from '../hooks/usePageMeta.js';
 import { IMG, PHONE, TEL, fmt, prefersReducedMotion } from '../data/site.js';
+import { WORDMARK } from '../data/brand.js';
 import './Home.css';
 
 /* ---------- Content ---------- */
@@ -154,14 +156,18 @@ function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-h">
-      <div ref={r.img} className="hero-img" role="img" aria-label="Tall racking aisle inside a Saluja warehouse" />
+      <div ref={r.img} className="hero-img" role="img" aria-label="Tall racking aisle in a warehouse" />
       <div ref={r.shade} className="hero-shade" aria-hidden="true" />
 
       <div ref={r.mask} className="hero-mask" aria-hidden="true">
         <div className="hero-word">
-          {'SALUJA'.split('').map((ch, i) => (
+          {WORDMARK.letters.map((l, i) => (
             <span key={i} className="hero-letter">
-              <span style={{ transform: lettersIn ? 'translateY(0)' : 'translateY(105%)', transitionDelay: `${i * 70}ms` }}>{ch}</span>
+              <span style={{ transform: lettersIn ? 'translateY(0)' : 'translateY(105%)', transitionDelay: `${i * 70}ms` }}>
+                <svg viewBox={`0 0 ${l.w} ${WORDMARK.h}`} width={l.w} height={WORDMARK.h}>
+                  <path fill="currentColor" d={l.d} />
+                </svg>
+              </span>
             </span>
           ))}
         </div>
@@ -286,8 +292,7 @@ function Intro() {
             <img className="intro-img-main" src={IMG('1587293852726-70cdb56c2866', 1400)} alt="High pallet racking stocked with cartons" loading="lazy" />
             <img className="intro-img-sub" src={IMG('1616401784845-180882ba9ba8', 900)} alt="Reach truck working an aisle" loading="lazy" />
             <div className="intro-badge">
-              <span>Since</span>
-              <strong>2008</strong>
+              <BrandSeal />
             </div>
           </div>
         </div>

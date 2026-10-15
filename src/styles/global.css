@@ -10,11 +10,16 @@
   --orange-dark: #dc6a10;
   --orange-text: #ad540b;  /* small orange text; 4.6:1 on --bg */
   --peach: #f9b882;
-  --blue: #2e6a88;
+  --orange-tint: #fdeedf;  /* icon wells */
+  --blue: #2e6a88;         /* lighter navy tint for data bars and map pins */
   --navy: #0f3b52;
   --navy-deep: #0a2a3b;
   --sand: #eae6df;
   --stone: #e3ded6;
+  --stone-dark: #c9c3b8;
+  --track: #f1eee9;        /* empty bar tracks */
+  --live: #2fb36a;         /* status dots only */
+  --error: #b4441a;
   --line: rgba(15, 15, 16, 0.12);
   --line-dark: rgba(244, 242, 238, 0.12);
 

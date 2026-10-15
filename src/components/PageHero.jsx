@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import useHeroScroll from '../hooks/useHeroScroll.js';
+import BrandMark from './BrandMark.jsx';
 import './PageHero.css';
 
 /**
@@ -96,7 +97,7 @@ export default function PageHero({ variant = 'split', id, image, alt, badge, cru
             {photo}
             <div className="page-hero-shade" aria-hidden="true" />
           </div>
-          <span className="page-hero-pin" aria-hidden="true"><i /></span>
+          <span className="page-hero-pin" aria-hidden="true"><i /><BrandMark /></span>
           {aside && <div className="page-hero-aside">{aside}</div>}
         </div>
       </>

@@ -1,0 +1,26 @@
+.nf {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(120px, 14vw, 180px) 0 var(--page-end);
+}
+.nf-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.nf-seal { width: clamp(132px, 14vw, 176px); margin-bottom: 12px; }
+.nf-title { font-size: clamp(40px, 5vw, 72px); }
+.nf .lead { max-width: 480px; }
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.nf-actions .btn { align-self: auto; }
+.nf-call { font-size: 14px; color: var(--muted); }
+.nf-call:hover { color: var(--navy); }

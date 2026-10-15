@@ -11,7 +11,7 @@
 .hero-hud { position: absolute; inset: 0; }
 
 .hero-img {
-  background: #1d3a4a url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=2400&q=75&auto=format&fit=crop') center / cover no-repeat;
+  background: var(--navy-deep) url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=2400&q=75&auto=format&fit=crop') center / cover no-repeat;
   transform: scale(1.25);
   will-change: transform;
 }
@@ -31,15 +31,15 @@
   justify-content: center;
   will-change: transform, opacity;
 }
+/* The client's SALUJA wordmark; black letters punch through the screen-blended mask */
 .hero-word {
+  --wordmark-w: clamp(300px, 84vw, 1680px);
   display: flex;
-  font: 800 clamp(64px, 22vw, 440px)/0.8 var(--sans);
-  letter-spacing: -0.04em;
   color: #000;
-  text-transform: uppercase;
 }
-.hero-letter { display: block; overflow: hidden; padding: 0.05em 0; }
+.hero-letter { display: block; overflow: hidden; }
 .hero-letter > span { display: block; transition: transform 1200ms var(--ease); }
+.hero-letter svg { display: block; width: auto; height: calc(var(--wordmark-w) * 0.2135); }
 
 .hero-hud {
   pointer-events: none;
@@ -128,7 +128,7 @@
 .hero-text {
   margin: 0;
   font: 400 clamp(16px, 1.3vw, 19px)/1.6 var(--sans);
-  color: #4a535c;
+  color: var(--muted);
   max-width: 500px;
 }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
@@ -195,7 +195,7 @@
   align-items: center;
   justify-content: center;
   color: var(--orange-hot);
-  background: #fdeedf;
+  background: var(--orange-tint);
 }
 .hero-feat-text { display: flex; flex-direction: column; gap: 4px; }
 .hero-feat-text strong { font: 600 15px var(--sans); }
@@ -250,7 +250,7 @@
 /* ================= Intro ================= */
 .intro-copy { max-width: 560px; }
 .intro-collage { position: relative; height: clamp(420px, 44vw, 640px); }
-.intro-collage img { position: absolute; object-fit: cover; background: var(--stone); }
+.intro-collage > img { position: absolute; object-fit: cover; background: var(--stone); }
 .intro-img-main { right: 0; top: 0; width: 72%; height: 100%; border-radius: 28px; }
 .intro-img-sub {
   left: 0;
@@ -262,27 +262,15 @@
 }
 .intro-badge {
   position: absolute;
-  left: 8%;
-  top: 6%;
-  width: clamp(104px, 10vw, 128px);
+  left: 6%;
+  top: 5%;
+  width: clamp(128px, 12vw, 168px);
   aspect-ratio: 1;
+  padding: clamp(8px, 0.9vw, 12px);
   border-radius: 50%;
-  background: var(--navy);
-  color: var(--bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  box-shadow: 0 20px 40px rgba(10, 42, 59, 0.25);
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(10, 42, 59, 0.18);
 }
-.intro-badge span {
-  font: 500 11px var(--sans);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(244, 242, 238, 0.7);
-}
-.intro-badge strong { font: 400 clamp(32px, 3vw, 40px)/1 var(--serif); }
 
 .intro-stats {
   margin: clamp(64px, 7vw, 110px) 0 0;
@@ -410,7 +398,7 @@
   height: clamp(400px, 42vw, 580px);
   border-radius: 28px;
   overflow: hidden;
-  background: #eef1f4;
+  background: var(--sand);
   box-shadow: 0 20px 50px rgba(15, 15, 16, 0.1);
   border: 1px solid rgba(15, 15, 16, 0.06);
 }
@@ -439,7 +427,7 @@
   overflow: hidden;
   scroll-snap-align: start;
   color: #fff;
-  background: #1d3a4a;
+  background: var(--navy-deep);
 }
 .rail-card img {
   position: absolute;
@@ -479,7 +467,7 @@
   justify-content: center;
   text-align: center;
   color: #fff;
-  background: #1d3a4a;
+  background: var(--navy-deep);
 }
 .home-cta > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .home-cta-shade { position: absolute; inset: 0; background: rgba(10, 42, 59, 0.62); }

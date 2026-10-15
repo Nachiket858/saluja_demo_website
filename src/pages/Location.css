@@ -91,6 +91,7 @@
 }
 .map-legend span { display: flex; align-items: center; gap: 6px; }
 .map-legend i { width: 8px; height: 8px; border-radius: 50%; }
+.map-legend-mark { width: 13px; height: auto; }
 
 .map-card {
   position: relative;

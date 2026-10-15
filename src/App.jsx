@@ -7,6 +7,7 @@ import Facility from './pages/Facility.jsx';
 import Location from './pages/Location.jsx';
 import Company from './pages/Company.jsx';
 import Contact from './pages/Contact.jsx';
+import NotFound from './pages/NotFound.jsx';
 import useScrollReveal from './hooks/useScrollReveal.js';
 
 function ScrollToTop() {
@@ -34,7 +35,7 @@ export default function App() {
           <Route path="/location" element={<Location />} />
           <Route path="/company" element={<Company />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -45,7 +45,7 @@ export default function Facility() {
         id="f-h"
         tall
         image={IMG('1553413077-190dd305871c', 2400)}
-        alt="Tall racking aisle inside the Waluj Campus"
+        alt="Tall racking aisle in a warehouse"
         crumb="Facility"
         badge="Facility 01 · Nagar Highway, Waluj"
         title={<>Waluj <span className="em">Campus</span></>}
@@ -147,7 +147,7 @@ export default function Facility() {
                 <div className="height-col" style={{ height: '85.7%' }}>
                   <span className="height-col-label is-ours">Saluja · 6 levels</span>
                   {Array.from({ length: 6 }, (_, i) => (
-                    <div key={i} style={{ background: i % 2 ? '#F8A564' : 'var(--orange)' }} />
+                    <div key={i} style={{ background: i % 2 ? 'var(--peach)' : 'var(--orange)' }} />
                   ))}
                 </div>
                 <div className="height-col" style={{ height: '50%' }}>
@@ -173,7 +173,7 @@ export default function Facility() {
                 </div>
                 <div className="load-row is-muted">
                   <span>Typical shed</span>
-                  <span className="bar bar--lg"><span style={{ width: '37.5%', background: '#C9C3B8' }} /></span>
+                  <span className="bar bar--lg"><span style={{ width: '37.5%', background: 'var(--stone-dark)' }} /></span>
                   <span>3</span>
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default function Facility() {
             <img src={IMG('1586528116311-ad8dd3c8310d', 1400)} alt="Warehouse interior stocked with goods" loading="lazy" />
           </div>
           <div className="gallery-frame">
-            <img src={IMG('1601584115197-04ecc0da31d7', 900)} alt="Truck arriving at the campus" loading="lazy" />
+            <img src={IMG('1601584115197-04ecc0da31d7', 900)} alt="Truck arriving at a loading bay" loading="lazy" />
           </div>
         </div>
       </section>

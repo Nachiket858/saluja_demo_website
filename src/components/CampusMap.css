@@ -4,7 +4,7 @@
   height: 100%;
   border-radius: 28px;
   overflow: hidden;
-  background: #eef1f4;
+  background: var(--sand);
 }
 
 .campus-map {
@@ -15,7 +15,7 @@
 }
 
 .campus-map.leaflet-container {
-  background: #eef1f4;
+  background: var(--sand);
   font-family: var(--sans);
 }
 
@@ -38,13 +38,12 @@
   background: transparent !important;
   color: var(--ink) !important;
   border-bottom: 1px solid rgba(15, 15, 16, 0.08) !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
+  font: 500 18px/38px var(--sans) !important;
   transition: background 200ms, color 200ms !important;
 }
 
 .campus-map .leaflet-bar a:hover {
-  background: var(--ink) !important;
+  background: var(--navy) !important;
   color: #fff !important;
 }
 
@@ -76,40 +75,35 @@
 
 .beacon-core {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--orange-hot);
-  border: 3.5px solid #fff;
+  background: #fff;
+  border: 2.5px solid var(--orange);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(244, 126, 32, 0.5);
+  box-shadow: 0 4px 16px rgba(15, 59, 82, 0.35);
   z-index: 2;
 }
 
-.beacon-core i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #fff;
-}
+.beacon-core svg { width: 19px; height: auto; margin-top: -1px; }
 
 .beacon-wave {
   position: absolute;
   top: 0;
   left: 0;
-  width: 22px;
-  height: 22px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 2px solid var(--orange-hot);
+  border: 2px solid var(--orange);
   animation: beacon-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
   z-index: 1;
 }
 
 @keyframes beacon-ping {
   0% { transform: scale(1); opacity: 0.9; }
-  75%, 100% { transform: scale(3.2); opacity: 0; }
+  75%, 100% { transform: scale(2.4); opacity: 0; }
 }
 
 .beacon-label {
@@ -118,7 +112,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  background: var(--ink);
+  background: var(--navy);
   color: #fff;
   padding: 6px 12px;
   border-radius: 12px;
@@ -151,8 +145,8 @@
   transition: transform 250ms var(--ease);
 }
 
-.map-smart-pin.map-pin--industry { --pin-bg: #2e6a88; }
-.map-smart-pin.map-pin--transport { --pin-bg: #5a6470; }
+.map-smart-pin.map-pin--industry { --pin-bg: var(--blue); }
+.map-smart-pin.map-pin--transport { --pin-bg: var(--muted); }
 .map-smart-pin.map-pin--city { --pin-bg: var(--navy); }
 
 .pin-icon {
