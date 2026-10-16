@@ -105,4 +105,4 @@ export const formatDate = (iso) =>
 const words = (post) =>
   post.body.reduce((n, [, v]) => n + [].concat(v).join(' ').split(/\s+/).length, 0);
 
-export const readTime = (post) => `${Math.max(1, Math.round(words(post) / 220))} min read`;
+export const readTime = (post) => `${Math.ceil(words(post) / 200)} min read`;
