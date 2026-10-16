@@ -207,10 +207,13 @@
 .nav-menu-cta:hover { background: var(--navy); }
 
 @media (min-width: 1080px) {
-  .nav-links,
-  .nav-phone { display: flex; }
+  .nav-links { display: flex; }
   .nav-burger,
   .nav-menu { display: none; }
+}
+/* Five links leave room for the phone number only on wider screens */
+@media (min-width: 1280px) {
+  .nav-phone { display: flex; }
 }
 
 @media (max-width: 560px) {

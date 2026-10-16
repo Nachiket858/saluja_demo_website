@@ -20,6 +20,8 @@ const SELECTORS = [
   '.seg', '.place-list li', '.map-frame', '.dest-list', '.region-card',
   // company
   '.story-sticky', '.lead-media', '.lead-person', '.promises li', '.sus-list',
+  // blog
+  '.post-card',
 ];
 
 export default function useScrollReveal(key) {

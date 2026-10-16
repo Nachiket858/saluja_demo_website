@@ -123,6 +123,12 @@
   color: var(--footer-text);
 }
 address.footer-col { font-style: normal; }
+.footer-portal {
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--footer-line);
+  font-weight: 500;
+}
 .footer-directions { margin-top: 2px; font-weight: 500; color: var(--orange); }
 .footer-directions:hover { color: var(--bg); }
 
@@ -173,5 +179,6 @@ address.footer-col { font-style: normal; }
     gap: 12px 16px;
   }
   .footer-nav .footer-label { grid-column: 1 / -1; margin-bottom: 0; }
+  .footer-portal { grid-column: 1 / -1; margin-top: 2px; }
   .footer-base { flex-direction: column; padding-top: 20px; padding-bottom: 56px; }
 }

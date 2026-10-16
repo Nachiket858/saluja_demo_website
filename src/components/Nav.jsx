@@ -9,6 +9,7 @@ const LINKS = [
   { label: 'Facility', to: '/facility' },
   { label: 'Location', to: '/location' },
   { label: 'Company', to: '/company' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -49,8 +50,8 @@ export default function Nav() {
         </Link>
 
         <div className="nav-links">
-          {LINKS.slice(0, 4).map((l) => (
-            <NavLink key={l.to} to={l.to} end className={linkClass('nav-link')}>
+          {LINKS.slice(0, -1).map((l) => (
+            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass('nav-link')}>
               <span className="nav-dot" aria-hidden="true" />
               {l.label}
             </NavLink>
@@ -84,7 +85,7 @@ export default function Nav() {
       {open && (
         <div id="nav-menu" className="nav-menu">
           {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} end className={linkClass('nav-menu-link')}>
+            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass('nav-menu-link')}>
               <span className="nav-menu-label">
                 <span className="nav-dot" aria-hidden="true" />
                 {l.label}

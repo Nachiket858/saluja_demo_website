@@ -1,6 +1,7 @@
 export const PHONE = '+91 84604 27855';
 export const TEL = 'tel:+918460427855';
 export const WHATSAPP = 'https://wa.me/918460427855';
+export const STAFF_PORTAL = 'https://saluja-backend.vercel.app';
 
 export const HOME_COORDS = [19.842, 75.236];
 export const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${HOME_COORDS[0]},${HOME_COORDS[1]}`;

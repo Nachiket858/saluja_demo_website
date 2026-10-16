@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logoWhite from '../assets/brand/logo-horizontal-white.svg';
 import { WORDMARK } from '../data/brand.js';
-import { DIRECTIONS, PHONE, TEL, WHATSAPP } from '../data/site.js';
+import { DIRECTIONS, PHONE, STAFF_PORTAL, TEL, WHATSAPP } from '../data/site.js';
 import './Footer.css';
 
 const LINKS = [
@@ -9,6 +9,7 @@ const LINKS = [
   ['Facility', '/facility'],
   ['Location', '/location'],
   ['Company', '/company'],
+  ['Blog', '/blog'],
   ['Contact', '/contact'],
 ];
 
@@ -49,6 +50,9 @@ export default function Footer() {
             {LINKS.map(([label, to]) => (
               <Link key={to} to={to} className="footer-link">{label}</Link>
             ))}
+            <a href={STAFF_PORTAL} target="_blank" rel="noopener" className="footer-link footer-portal">
+              Staff portal <span aria-hidden="true">↗</span>
+            </a>
           </nav>
 
           <div className="footer-col">
